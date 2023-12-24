@@ -21,9 +21,13 @@ def user_input_features():
     itemDescription = st.selectbox("itemDescription", ['tropical fruit', 'whole milk', 'pip fruit',
                                    'other vegetables', 'whole milk', 'rolls/buns', 'other vegetables', 'pot plants', 'whole milk'])
     Mounth = st.select_slider("Mounth", list(map(str, range(1, 12))))
+    print("itemDescription:", itemDescription)
+    print("year:", year)
+    print("Product:", Product)
     return itemDescription, year, Product
 
 itemDescription, year, Product = user_input_features()
+
 
 data = get_data(itemDescription.lower(), year)
 
